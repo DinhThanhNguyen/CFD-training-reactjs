@@ -1,0 +1,483 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <title>Grunt</title>
+    <meta name="title" content="" />
+    <meta name="description" content="" />
+    <meta property="og:locale" content="vi" />
+    <meta property="og:type" content="article" />
+    <meta property="og:title" content="Trang chủ" />
+    <meta property="og:description" content="" />
+    <meta property="og:url" content="" />
+    <meta property="og:site_name" content="" />
+    <meta property="og:image" content="" />
+
+    <link rel="stylesheet" href="dest/style.min.css">
+    <link rel="stylesheet" href="dest/fonts.css">
+    <link rel="stylesheet" href="dest/stylelibs.min.css">
+</head>
+
+<body>
+    <header id="header">
+        <div class="wrap">
+            <div class="menu-hambeger">
+                <div class="button">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+                <span class="text">menu</span>
+            </div>
+            <a href="#" class="logo">
+                <img src="img/logo.svg" alt="">
+                <h1>CFD</h1>
+            </a>
+            <div class="right">
+                <div class="have-login">
+                    <div class="account">
+                        <a href="#" class="info">
+                            <div class="name">Trần Lê Trọng Nghĩa</div>
+                            <div class="avatar">
+                                <img src="img/avt.png" alt="">
+                            </div>
+                        </a>
+                    </div>
+                    <div class="hamberger">
+                    </div>
+                    <div class="sub">
+                        <a href="#">Khóa học của tôi</a>
+                        <a href="#">Thông tin tài khoản</a>
+                        <a href="#">Đăng xuất</a>
+                    </div>
+                </div>
+                <!-- <div class="not-login bg-none">
+                    <a href="#" class="btn-register">Đăng nhập</a>
+                    <a href="login.html" class="btn main btn-open-login">Đăng ký</a>
+                </div> -->
+            </div>
+        </div>
+    </header>
+    <nav class="nav">
+        <ul>
+            <li class="li_login">
+                <a href="#">Đăng ký / Đăng nhập</a>
+            </li>
+            <li class="active">
+                <a href="#">Trang chủ</a>
+            </li>
+            <li>
+                <a href="#">CFD Team</a>
+            </li>
+            <li>
+                <a href="#">Khóa Học</a>
+            </li>
+            <li>
+                <a href="#">Dự Án</a>
+            </li>
+            <li>
+                <a href="#">Liên hệ</a>
+            </li>
+        </ul>
+    </nav>
+    <div class="overlay_nav"></div>
+    <main class="profile" id="main">
+        <section>
+            <div class="top-info">
+                <div class="avatar">
+                    <!-- <span class="text">H</span> -->
+                    <img src="img/avatar-lg.png" alt="">
+                    <div class="camera"></div>
+                </div>
+                <div class="name">trần nghĩa</div>
+                <p class="des">Thành viên của team CFD1-OFFLINE</p>
+            </div>
+            <div class="container">
+                <div class="tab">
+                    <div class="tab-title">
+                        <a href="#" class="active">Thông tin tài khoản</a>
+                        <a href="#">Khóa học của bạn</a>
+                        <a href="#">Dự án đã làm</a>
+                        <a href="#">Lịch sử thanh toán</a>
+                        <a href="#">Quản lý COIN của tôi</a>
+                    </div>
+                    <div class="tab-content">
+                        <div class="tab1" style="display: none;">
+                            <label>
+                                <p>Họ và tên<span>*</span></p>
+                                <input type="text" placeholder="Nguyễn Văn A">
+                            </label>
+                            <label>
+                                <p>Số điện thoại<span>*</span></p>
+                                <input type="text" placeholder="0949******">
+                            </label>
+                            <label>
+                                <p>Email<span>*</span></p>
+                                <input value="vuong.dang@dna.vn" disabled type="text">
+                            </label>
+                            <label>
+                                <p>Facebook<span>*</span></p>
+                                <input type="text" placeholder="Facebook url">
+                            </label>
+                            <label>
+                                <p>Skype<span>*</span></p>
+                                <input type="text" placeholder="Skype url">
+                            </label>
+                            <div class="btn main rect">LƯU LẠI</div>
+                        </div>
+                        <div class="tab2" style="display: none;">
+                            <div class="item">
+                                <div class="cover">
+                                    <img src="img/img3.png" alt="">
+                                </div>
+                                <div class="info">
+                                    <a href="#" class="name">
+                                        front-end căn bản
+                                    </a>
+                                    <div class="date">Khai giảng ngày 09/09/2019</div>
+                                    <div class="row">
+                                        <div class="">
+                                            <img src="img/clock.svg" alt="" class="icon">54 giờ
+                                        </div>
+                                        <div class="">
+                                            <img src="img/play.svg" alt="" class="icon">25 video
+                                        </div>
+                                        <div class="">
+                                            <img src="img/user.svg" alt="" class="icon">20 học viên
+                                        </div>
+                                    </div>
+                                    <div class="process">
+                                        <div class="line">
+                                            <div class="rate" style="width: 30%"></div>
+                                        </div>
+                                        30%
+                                    </div>
+                                    <div class="btn overlay round btn-continue">
+                                        Tiếp tục học
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="item">
+                                <div class="cover">
+                                    <img src="img/img7.png" alt="">
+                                </div>
+                                <div class="info">
+                                    <a href="#" class="name">
+                                        front-end nâng cao
+                                    </a>
+                                    <div class="date">Khai giảng ngày 09/09/2019</div>
+                                    <div class="row">
+                                        <div class="">
+                                            <img src="img/clock.svg" alt="" class="icon">54 giờ
+                                        </div>
+                                        <div class="">
+                                            <img src="img/play.svg" alt="" class="icon">25 video
+                                        </div>
+                                        <div class="">
+                                            <img src="img/user.svg" alt="" class="icon">20 học viên
+                                        </div>
+                                    </div>
+                                    <div class="process">
+                                        <div class="line">
+                                            <div class="rate" style="width: 30%"></div>
+                                        </div>
+                                        30%
+                                    </div>
+                                    <div class="btn overlay round btn-continue">
+                                        Tiếp tục học
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="tab3" style="display: none;">
+                            <div class="row">
+                                <div class="col-md-6 course">
+                                    <div class="wrap">
+                                        <a href="#" class="cover">
+                                            <img src="img/img8.png" alt="">
+                                        </a>
+                                        <div class="info">
+                                            <a href="#" class="name">
+                                                Furnitown
+                                            </a>
+                                            <p class="des">
+                                                Dự án hoàn thành trong khóa CFD1 Offline của CFD Team.
+                                            </p>
+                                        </div>
+                                        <div class="bottom">
+                                            <div class="teacher">
+                                                <div class="avatar">
+                                                    <img src="img/avt.png" alt="">
+                                                </div>
+                                                <div class="name">Trần Nghĩa</div>
+                                            </div>
+                                            <div class="register-btn">Website</div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-6 course">
+                                    <div class="wrap">
+                                        <a href="#" class="cover">
+                                            <img src="img/img8.png" alt="">
+                                        </a>
+                                        <div class="info">
+                                            <a href="#" class="name">
+                                                GboxMB
+                                            </a>
+                                            <p class="des">
+                                                Dự án hoàn thành trong khóa CFD1 Offline của CFD Team.
+                                            </p>
+                                        </div>
+                                        <div class="bottom">
+                                            <div class="teacher">
+                                                <div class="avatar">
+                                                    <img src="img/avt.png" alt="">
+                                                </div>
+                                                <div class="name">Trần Nghĩa</div>
+                                            </div>
+                                            <div class="register-btn">Website</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="btn-wrap">
+                                <div class="btn overlay btn-icon round">
+                                    <img src="img/icon-upload.svg" alt=""> Tải lên
+                                </div>
+                            </div>
+                        </div>
+                        <div class="tab4" style="display: none;">
+                            <div class="item itemhistory">
+                                <div class="name">Khóa học CFD1-offline</div>
+                                <div class="date">09/09/2020</div>
+                                <div class="money">1.500.000 VND</div>
+                            </div>
+                            <div class="item itemhistory">
+                                <div class="name">Khóa học CFD1-offline</div>
+                                <div class="date">18/10/2020</div>
+                                <div class="money">1.500.000 VND</div>
+                            </div>
+                            <div class="item itemhistory">
+                                <div class="name">Khóa học CFD1-offline</div>
+                                <div class="date">18/10/2020</div>
+                                <div class="money">1.500.000 VND</div>
+                            </div>
+                            <div class="item itemhistory">
+                                <div class="name">Khóa học CFD1-offline</div>
+                                <div class="date">18/10/2020</div>
+                                <div class="money">1.500.000 VND</div>
+                            </div>
+                        </div>
+                        <div class="tab5 cointab" style="display: block;">
+                            <div class="coininfo">
+                                <div class="coininfo__box">
+                                    <h3><strong>Thông tin COIN</strong></h3>
+                                    <div class="coininfo__box-ct">
+                                        <div>
+                                            <img src="img/cfd-coin.png" alt="">
+                                            <p>Bạn có <strong>300</strong> COIN</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="coininfo__box">
+                                    <h3><strong>Đổi COIN</strong></h3>
+                                    <div class="coininfo__box-ct">
+                                        <label class="checkcontainer">
+                                            Voucher Tiki 100k
+                                            <input type="radio" name="radio">
+                                            <span class="checkmarkradio"></span>
+                                        </label>
+                                        <label class="checkcontainer">
+                                            Voucher Tiki 200k
+                                            <input type="radio" name="radio">
+                                            <span class="checkmarkradio"></span>
+                                        </label>
+                                        <label class="checkcontainer">
+                                            Voucher Tiki 500k
+                                            <input type="radio" name="radio">
+                                            <span class="checkmarkradio"></span>
+                                        </label>
+                                        <label class="checkcontainer">
+                                            Thẻ nạp điện thoại 100k
+                                            <input type="radio" name="radio">
+                                            <span class="checkmarkradio"></span>
+                                        </label>
+                                        <label class="checkcontainer">
+                                            Thẻ nạp điện thoại 200k
+                                            <input type="radio" name="radio">
+                                            <span class="checkmarkradio"></span>
+                                        </label>
+                                        <label class="checkcontainer">
+                                            Thẻ nạp điện thoại 500k
+                                            <input type="radio" name="radio">
+                                            <span class="checkmarkradio"></span>
+                                        </label>
+                                        <small><i>*Bạn có thể đổi COIN 1 lần</i></small>
+
+                                    </div>
+                                    <a href="javascript:void(0)" class="btn main">Đổi COIN</a>
+
+                                </div>
+                            </div>
+                            <div class="coinhistory">
+                                <h3><strong>Lịch sử COIN</strong></h3>
+                                <!-- <p>Chưa sử dụng COIN</p> -->
+                                <div class="itemhistory">
+                                    <div class="td"><strong>COIN</strong></div>
+                                    <div class="td"><strong>Thời gian</strong></div>
+                                    <div class="td"><strong>Nội dung</strong></div>
+                                    <div class="td"><strong>Trạng thái</strong></div>
+                                </div>
+                                <div class="itemhistory">
+                                    <div class="td"><span class="coin red">-300</span></div>
+                                    <div class="td">09/09/2020</div>
+                                    <div class="td">Giới thiệu khóa học cho học viên mới</div>
+                                    <div class="td">Đã chấp nhận</div>
+                                </div>
+                                <div class="itemhistory">
+                                    <div class="td"><span class="coin">+300</span></div>
+                                    <div class="td">18/10/2020</div>
+                                    <div class="td">Dùng COIN để quy đổi sang Voucher Tiki</div>
+                                    <div class="td">Đã chấp nhận</div>
+                                </div>
+                                <div class="itemhistory">
+                                    <div class="td"><span class="coin red">-300</span></div>
+                                    <div class="td">18/10/2020</div>
+                                    <div class="td">Dùng COIN để đổi sang Thẻ nạp điện thoại</div>
+                                    <div class="td">Chờ duyệt</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    <footer id="footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-5 left">
+                    <p class="des">
+                        Sáng tạo, tinh tế và phù hợp sẽ khiến
+                        sản phẩm của bạn trở nên khác biệt.
+                    </p>
+                    <p class="address">
+                        Số 11, Phan Kế Bính, Quận 1, TP. Hồ Chí Minh
+                    </p>
+                    <p class="phone">(+84) 98 9596 913</p>
+                    <div class="social">
+                        <a href="#">
+                            <img src="img/fb-icon.png" alt="">
+                        </a>
+                        <a href="#">
+                            <img src="img/email-icon.png" alt="">
+                        </a>
+                        <a href="#">
+                            <img src="img/skype-icon.png" alt="">
+                        </a>
+                    </div>
+                </div>
+                <div class="right">
+                    <nav>
+                        <ul>
+                            <li>
+                                <a href="#">Trang chủ</a>
+                            </li>
+                            <li>
+                                <a href="#">Khóa học</a>
+                            </li>
+                            <li>
+                                <a href="#">Thanh toán</a>
+                            </li>
+                            <li>
+                                <a href="#">Điều khoản</a>
+                            </li>
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+            <a href="#" class="back-to-top">
+                <div class="line"></div>
+                CUỘN LÊN
+            </a>
+        </div>
+        <div class="copy-right">
+            <div class="container">
+                <p>2020 Creative Front-End Dev</p>
+                <p>Được thiết kế và lập trình bởi CFD Team</p>
+            </div>
+        </div>
+    </footer>
+    <!-- popup video homepage -->
+    <div class="popup-video" style="display: none;">
+        <div class="wrap">
+            <div class="video-src"></div>
+        </div>
+        <div class="close"></div>
+    </div>
+    <div class="popup-form popup-login" style="display: none;">
+        <div class="wrap">
+            <!-- login-form -->
+            <div class="ct_login" style="display:block">
+                <h2 class="title">Đăng nhập</h2>
+                <input type="text" placeholder="Email / Số điện thoại">
+                <input type="password" placeholder="Mật khẩu">
+                <div class="remember">
+                    <label class="btn-remember">
+                        <div>
+                            <input type="checkbox">
+                        </div>
+                        <p>Nhớ mật khẩu</p>
+                    </label>
+                    <a href="#" class="forget">Quên mật khẩu?</a>
+                </div>
+                <div class="btn rect main btn-login">đăng nhập</div>
+                <div class="text-register" style="">
+                    <strong>hoặc đăng ký bằng</strong>
+                </div>
+                <div>
+                    <div class="btn btn-icon rect white btn-google">
+                        <img src="img/google.svg" alt="">
+                        Google
+                    </div>
+                </div>
+                <div class="close">
+                    <img src="img/close-icon.png" alt="">
+
+                </div>
+            </div>
+            <!-- email form -->
+            <div class="ct_email">
+                <h2 class="title">Đặt lại mật khẩu</h2>
+                <input type="text" placeholder="Email">
+                <div class="btn rect main btn-next">Tiếp theo</div>
+                <div class="back"></div>
+                <div class="close">
+                    <img src="img/close-icon.png" alt="">
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="popup-form popup-login" style="display: none;">
+        <div class="wrap">
+            <h2 class="title">Đăng ký</h2>
+            <div class="btn btn-icon rect white btn-google">
+                <img src="img/google.svg" alt="">
+                Google
+            </div>
+            <p class="policy">
+                Bằng việc đăng kí, bạn đã đồng ý <a href="#">Điều khoản bảo mật</a> của CFD
+            </p>
+            <div class="close">
+                <img src="img/close-icon.png" alt="">
+            </div>
+        </div>
+    </div>
+    <script src="dest/jsmain.min.js"></script>
+    <script src="js/main.js"></script>
+</body>
+
+</html>
