@@ -23,6 +23,8 @@ import CoursePage from './pages/coursesPage';
 import Email from './pages/email';
 import ErrorPage from './pages/errorPage';
 import IntroduceCoin from './pages/introduceCoin';
+import ModalLogin from './components/ModalLogin';
+import ModalVideo from './components/ModalVideo';
 
 function App() {
   return (
@@ -50,6 +52,8 @@ function App() {
         <Route path='*' element={<ErrorPage />} />
       </Routes>
       <Footer />
+      <ModalLogin />
+      <ModalVideo />
     </BrowserRouter>
   );
 }

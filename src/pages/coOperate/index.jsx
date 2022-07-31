@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import useFormValidate from '../../hook/useFormValidate'
 
 const style = ({
     inputError: {
@@ -15,60 +16,49 @@ const style = ({
 })
 
 export default function CoOperate() {
-    let [form, setForm] = useState({
+    let {form, error, inputChange, validateOnBlur, submitForm, deleteErrorOnInput} = useFormValidate({
         username: '',
         email: '',
         title: '',
         content: ''
+    }, {
+        rules: {
+            username: {
+                required: true
+            },
+            email: {
+                required: true,
+                pattern: 'email'
+            },
+            title: {
+                required: true
+            },
+            content: {
+                required: true
+            }
+        },
+        message: {
+            username: {
+                required: 'Họ và Tên không được để trống'
+            },
+            email: {
+                required: 'Email không được để trống',
+                pattern: 'Email không đúng định dạng'
+            },
+            title: {
+                required: 'Tiêu đề không được để trống',
+            },
+            content: {
+                required: 'nội dung không được để trống',
+            }
+        }
     })
-    let [error, setError] = useState({})
 
-    let inputChange = (event) => {
-        let inputValue = event.target.value
-        let name = event.target.getAttribute('name');
-
-        form[name] = inputValue
-
-        setForm({ ...form })
-    }
-    let validateOnBlur = (event) => {
-        if (form[event.target.getAttribute('name')].length === 0) {
-            error[event.target.getAttribute('name')] = 'Trường này không được để trống'
+    function submit() {
+        let error = submitForm()
+        if(Object.keys(error).length === 0) {
+            alert('Liên hệ hợp tác thành công. Chúng tôi sẽ liên hệ lại sớm')
         }
-        setError({ ...error })
-    }
-
-    let submitForm = () => {
-        let error = {}
-        if (!form.username) {
-            error['username'] = 'Trường này không được để trống'
-        } else if (!/^[a-zA-Z\-]+$/.test(form.username)) {
-            error['username'] = 'Họ và Tên không đúng định dạng'
-        }
-        if (!form.email) {
-            error['email'] = 'Trường này không được để trống'
-        } else if (!/^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/.test(form.email)) {
-            error['email'] = 'Email không đúng định dạng'
-        }
-        if (!form.title) {
-            error['title'] = 'Trường này không được để trống'
-        } else if (!/^[a-zA-Z\-]+$/.test(form.title)) {
-            error['title'] = 'Tiêu đề không đúng định dạng'
-        }
-        if (!form.content) {
-            error['content'] = 'Trường này không được để trống'
-        } else if (!/^[a-zA-Z\-]+$/.test(form.content)) {
-            error['content'] = 'Nội dung không đúng định dạng'
-        }
-
-        setError(error)
-        if (Object.keys(error).length === 0) {
-            alert('Liên hệ hợp tác thành công')
-        }
-    }
-
-    let deleteError = (event) => {
-        error[event.target.getAttribute('name')] = ''
     }
 
     return (
@@ -82,7 +72,7 @@ export default function CoOperate() {
                 <div className="form">
                     <label style={style.labelStyle}>
                         <p>Họ và tên<span>*</span></p>
-                        <input type="text" placeholder="Họ và tên bạn" onChange={inputChange} onBlur={validateOnBlur} onInput={deleteError} name='username' value={form.username} />
+                        <input type="text" placeholder="Họ và tên bạn" onChange={inputChange} onBlur={validateOnBlur} onInput={deleteErrorOnInput} name='username' value={form.username} />
                     </label>
                     <p className="error" style={style.inputError}>{null || error.username}</p>
                     <label>
@@ -91,7 +81,7 @@ export default function CoOperate() {
                     </label>
                     <label style={style.labelStyle}>
                         <p>Email<span>*</span></p>
-                        <input type="text" placeholder="Email của bạn" onChange={inputChange} onBlur={validateOnBlur} onInput={deleteError} name='email' value={form.email} />
+                        <input type="text" placeholder="Email của bạn" onChange={inputChange} onBlur={validateOnBlur} onInput={deleteErrorOnInput} name='email' value={form.email} />
                     </label>
                     <p className="error" style={style.inputError}>{null || error.email}</p>
                     <label>
@@ -100,15 +90,15 @@ export default function CoOperate() {
                     </label>
                     <label style={style.labelStyle}>
                         <p>Tiêu đề<span>*</span></p>
-                        <input type="text" placeholder="Tiêu đề liên hệ" onChange={inputChange} onBlur={validateOnBlur} onInput={deleteError} name='title' value={form.title} />
+                        <input type="text" placeholder="Tiêu đề liên hệ" onChange={inputChange} onBlur={validateOnBlur} onInput={deleteErrorOnInput} name='title' value={form.title} />
                     </label>
                     <p className="error" style={style.inputError}>{null || error.title}</p>
                     <label style={style.labelStyle}>
                         <p>Nội dung<span>*</span></p>
-                        <textarea cols={30} rows={10} onChange={inputChange} onBlur={validateOnBlur} onInput={deleteError} name='content' value={form.content} />
+                        <textarea cols={30} rows={10} onChange={inputChange} onBlur={validateOnBlur} onInput={deleteErrorOnInput} name='content' value={form.content} />
                     </label>
                     <p className="error" style={style.inputError}>{null || error.content}</p>
-                    <div className="btn main rect" onClick={submitForm}>đăng ký</div>
+                    <div className="btn main rect" onClick={submit}>đăng ký</div>
                 </div>
             </section>
         </main>

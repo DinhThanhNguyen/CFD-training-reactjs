@@ -1,7 +1,31 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import { Link } from 'react-router-dom'
 
+let $ = window.$
+
 export default function Header() {
+
+    useEffect(() => {
+        $('body').on('click', function () {
+            $('.select.active .sub').fadeOut(200);
+            $('.select sub').fadeOut(200);
+        })
+
+        $('.menu-hambeger').on('click', function () {
+            $('body').toggleClass('menu-is-show');
+        });
+        // $('.overlay_nav').trigger('click')
+        $('.overlay_nav').on('click', function (e) {
+            $('body').removeClass('menu-is-show');
+        });
+
+        $(document).keyup(function (e) {
+            if (e.key === "Escape") {
+                $('body').removeClass('menu-is-show');
+            }
+        });
+    }, [])
+
     return (
         <>
             <header id="header">
@@ -36,6 +60,10 @@ export default function Header() {
                                 <Link to="/">Đăng xuất</Link>
                             </div>
                         </div>
+                        {/* <div className="not-login bg-none">
+                            <a href="#" className="btn-register">Đăng nhập</a>
+                            <a href="login.html" className="btn main btn-open-login">Đăng ký</a>
+                        </div> */}
                     </div>
                 </div>
             </header>

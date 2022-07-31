@@ -1,16 +1,17 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 
 export default function ProjectDoneItem(props) {
     return (
         <div className="col-md-6 course">
             <div className="wrap">
-                <a href="#" className="cover">
+                <Link to="/du-an" className="cover">
                     <img src={props.thumbnail} alt="" />
-                </a>
+                </Link>
                 <div className="info">
-                    <a href="#" className="name">
+                    <Link to="/du-an" className="name">
                         {props.nameProject}
-                    </a>
+                    </Link>
                     <p className="des">
                         {props.description}
                     </p>
