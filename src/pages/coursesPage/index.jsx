@@ -1,29 +1,37 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import Course from '../../components/Course'
+import { API } from '../../contants/api'
+import Skeleton from 'react-loading-skeleton'
 
 export default function CoursePage() {
+
+    let [course, setCourse] = useState()
+    useEffect(() => {
+        fetch(`${API}/elearning/v4/courses`)
+            .then(res => res.json())
+            .then(res => {
+                setCourse(res.data)
+            })
+    }, [])
+    if (!course) {
+        return (
+            <div style={{ display: 'flex', height: 500, flexDirection: 'column', alignItems: 'center', justifyContent: 'center' }}>...loading</div>
+        )
+    }
+
     return (
         <>
             <main className="homepage" id="main">
                 <section className="section-1">
                     <div className="container">
                         <h2 className="main-title">KHÓA HỌC CFD</h2>
-                        <p className="top-des">
-                            The readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it
-                            has
-                            a more-or-less normal
-                        </p>
                         <div className="textbox">
-                            <h3 className="sub-title">KHÓA HỌC</h3>
-                            <h2 className="main-title">ONLINE</h2>
+                            <h2 className="main-title">OFFLINE</h2>
                         </div>
                         <div className="list row">
-                            <Course thumbnail="/img/img1.png" name="Front-end căn bản" description="One of the best corporate fashion brands in Sydney" />
-                            <Course thumbnail="/img/img2.png" name="React JS" description="One of the best corporate fashion brands in Sydney" />
-                            <Course thumbnail="/img/img3.png" name="Animation" description="One of the best corporate fashion brands in Sydney" />
-                            <Course thumbnail="/img/img4.png" name="Scss, Grunt JS và Boostrap 4" description="One of the best corporate fashion brands in Sydney" />
-                            <Course thumbnail="/img/img5.png" name="UX/UI Design" description="One of the best corporate fashion brands in Sydney" />
-                            <Course thumbnail="/img/img6.png" name="Web Responsive" description="One of the best corporate fashion brands in Sydney" />
+                            {
+                                course.map(item => <Course key={item.id} {...item} />)
+                            }
                         </div>
                     </div>
                 </section>
@@ -31,12 +39,12 @@ export default function CoursePage() {
                     <div className="container">
                         <div className="textbox">
                             <h3 className="sub-title">KHÓA HỌC</h3>
-                            <h2 className="main-title">OFFLINE</h2>
+                            <h2 className="main-title">ONLINE</h2>
                         </div>
                         <div className="list row">
-                            <Course thumbnail="/img/img1.png" name="Front-end căn bản" description="One of the best corporate fashion brands in Sydney" />
-                            <Course thumbnail="/img/img2.png" name="React JS" description="One of the best corporate fashion brands in Sydney" />
-                            <Course thumbnail="/img/img3.png" name="Animation" description="One of the best corporate fashion brands in Sydney" />
+                            {
+                                course.map(item => <Course key={item.id} {...item} />)
+                            }
                         </div>
                         <div className="text-deco">C</div>
                     </div>

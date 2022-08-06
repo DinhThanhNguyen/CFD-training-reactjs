@@ -1,5 +1,5 @@
-import React, { useState } from 'react'
-import useFormValidate from '../../hook/useFormValidate'
+import React from 'react'
+import useFormValidate from '../../core/customHook/useFormValidate'
 
 const style = ({
     inputError: {

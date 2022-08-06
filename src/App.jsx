@@ -1,3 +1,4 @@
+import React, { useRef } from 'react';
 import {
   BrowserRouter,
   Route,
@@ -24,37 +25,61 @@ import Email from './pages/email';
 import ErrorPage from './pages/errorPage';
 import IntroduceCoin from './pages/introduceCoin';
 import ModalLogin from './components/ModalLogin';
-import ModalVideo from './components/ModalVideo';
+import AuthProvider from './core/customHook/useAuth';
+import PrivateRoute from './core/PrivateRoute';
+import ModalRegister from './components/ModalRegister';
+
+export const ContextModal = React.createContext({})
 
 function App() {
+  let refLogin = useRef()
+  let refRegister = useRef()
+  function openModalLogin() {
+    refLogin.current.style.display = 'flex'
+  }
+  function closeModalLogin() {
+    refLogin.current.style.display = 'none'
+  }
+  function openModalRegister() {
+    refRegister.current.style.display = 'flex'
+  }
+  function closeModalRegister() {
+    refRegister.current.style.display = 'none'
+  }
   return (
-    <BrowserRouter>
-      <Header />
-      <Routes >
-        <Route path='/' element={<Home />} />
-        <Route path='/thong-tin-ca-nhan' element={<Profile />}>
-          <Route path='/thong-tin-ca-nhan' element={<InforAccount />} />
-          <Route path='khoa-hoc-cua-toi' element={<MyCourseList />} />
-          <Route path='du-an-da-lam' element={<ProjectDone />} />
-          <Route path='lich-su-thanh-toan' element={<HistoryPayment />} />
-          <Route path='quan-li-coin' element={<CoinManagement />} />
-        </Route>
-        <Route path='/chi-tiet-khoa-hoc' element={<CourseDetail />} />
-        <Route path='/dang-ky-khoa-hoc' element={<Register />} />
-        <Route path='/team' element={<Team />} />
-        <Route path='/du-an' element={<Project />} />
-        <Route path='/danh-sach-khoa-hoc' element={<CoursePage />} />
-        <Route path='/phuong-thuc-thanh-toan' element={<PaymentMethod />} />
-        <Route path='/hop-tac' element={<CoOperate />} />
-        <Route path='/email' element={<Email />} />
-        <Route path='/faq' element={<FAQ />} />
-        <Route path='/gioi-thieu-coin' element={<IntroduceCoin />} />
-        <Route path='*' element={<ErrorPage />} />
-      </Routes>
-      <Footer />
-      <ModalLogin />
-      <ModalVideo />
-    </BrowserRouter>
+    <AuthProvider>
+      <ContextModal.Provider value={{ openModalLogin, closeModalLogin, openModalRegister, closeModalRegister  }}>
+        <BrowserRouter>
+          <Header />
+          <Routes >
+            <Route index element={<Home />} />
+            <Route element={<PrivateRoute />}>
+              <Route path='/thong-tin-ca-nhan' element={<Profile />}>
+                <Route path='/thong-tin-ca-nhan' element={<InforAccount />} />
+                <Route path='khoa-hoc-cua-toi' element={<MyCourseList />} />
+                <Route path='du-an-da-lam' element={<ProjectDone />} />
+                <Route path='lich-su-thanh-toan' element={<HistoryPayment />} />
+                <Route path='quan-li-coin' element={<CoinManagement />} />
+              </Route>
+            </Route>
+            <Route path='/chi-tiet-khoa-hoc/:slug' element={<CourseDetail />} />
+            <Route path='/dang-ky-khoa-hoc/:slug' element={<Register />} />
+            <Route path='/team' element={<Team />} />
+            <Route path='/du-an' element={<Project />} />
+            <Route path='/danh-sach-khoa-hoc' element={<CoursePage />} />
+            <Route path='/phuong-thuc-thanh-toan' element={<PaymentMethod />} />
+            <Route path='/hop-tac' element={<CoOperate />} />
+            <Route path='/email' element={<Email />} />
+            <Route path='/faq' element={<FAQ />} />
+            <Route path='/gioi-thieu-coin' element={<IntroduceCoin />} />
+            <Route path='*' element={<ErrorPage />} />
+          </Routes>
+          <Footer />
+          <ModalLogin ref={refLogin} />
+          <ModalRegister ref={refRegister} />
+        </BrowserRouter>
+      </ContextModal.Provider>
+    </AuthProvider>
   );
 }
 
