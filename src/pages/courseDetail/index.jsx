@@ -1,36 +1,21 @@
 import React, { useEffect, useState } from 'react'
 import { Link, useParams } from 'react-router-dom'
 import Loading from '../../components/Loading'
-import { API } from '../../contants/api'
+import pageApi from '../../contants/pageApi'
 import Banner from './components/Banner'
 import CourseDay from './components/CourseDay'
 import TeamMember from './components/TeamMember'
 
 export default function CourseDetail() {
-
-    let param = useParams().slug
     let [dataCourse, setDataCourse] = useState()
     useEffect(() => {
-        const fetchData = async () => {
-            let res = await fetch(`${API}/elearning/v4/courses`)
-            res = await res.json()
-            for (let i = 0; i < res.data.length; i++) {
-                if (res.data[i].slug === param) {
-                    setDataCourse(res.data[i])
-                }
-            }
-        }
-        fetchData()
-    }, [param])
-
-    useEffect(() => {
-        if(dataCourse) {
-            let $ = window.$
+        let $ = window.$
+        $("html, body").animate({ scrollTop: 0 }, 1000);
+        if (dataCourse) {
             $('.accordion .accordion__title').on('click', function () {
-                // console.log($(this));
-    
+
                 $(this).next().stop().slideToggle(200);
-    
+
                 let $accordion = $(this).closest('.accordion');
                 if ($accordion.hasClass('active')) {
                     $accordion.removeClass('active')
@@ -41,9 +26,22 @@ export default function CourseDetail() {
             })
         }
     }, [dataCourse])
-    
+
+    let param = useParams().slug
+    useEffect(() => {
+        const fetchData = async () => {
+            let res = await pageApi.courses()
+            for (let i = 0; i < res.data.length; i++) {
+                if (res.data[i].slug === param) {
+                    setDataCourse(res.data[i])
+                }
+            }
+        }
+        fetchData()
+    }, [param])
+
     if (!dataCourse) return <Loading />
-    
+
     return (
         <main className="course-detail" id="main">
             <Banner detail={dataCourse} />

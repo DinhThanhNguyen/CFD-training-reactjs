@@ -1,7 +1,7 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 
-export default function Course(props) {
+export default function Course(props, { isLoading }) {
     return (
         <div className="col-md-4 course">
             <div className="wrap">

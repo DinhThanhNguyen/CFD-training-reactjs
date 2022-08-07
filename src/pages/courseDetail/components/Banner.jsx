@@ -3,7 +3,7 @@ import React from 'react'
 export default function Banner({ detail }) {
     let money = detail.money
     return (
-        <section className="banner style2" style={{ '--background': '#cde6fb' }}>
+        <section className="banner style2" style={{ backgroundColor: '#cde6fb' }}>
             <div className="container">
                 <div className="info">
                     <h1>{detail.title}</h1>

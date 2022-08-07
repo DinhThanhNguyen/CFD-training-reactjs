@@ -1,7 +1,8 @@
 import React from 'react'
 import Course from '../../../components/Course'
+import SkeletonLoading from '../../../components/SkeletonCourse';
 
-export default function CourseList({ offline = [] }) {
+export default function CourseList({ offline = [], isLoading }) {
     return (
         <>
             <section className="section-courseoffline">
@@ -15,7 +16,7 @@ export default function CourseList({ offline = [] }) {
                     </div>
                     <div className="list row">
                         {
-                            offline.map(item => <Course key={item.id} {...item} />)
+                            isLoading ? [...Array(9)].map((e, i) => <SkeletonLoading key={i} />) : offline.map(course => <Course key={course.id} {...course} />)
                         }
                     </div>
                 </div>
@@ -27,7 +28,7 @@ export default function CourseList({ offline = [] }) {
                     </div>
                     <div className="list row">
                         {
-                            offline.map(course => <Course key={course.id} {...course} />)
+                            isLoading ? [...Array(9)].map((e, i) => <SkeletonLoading key={i} />) : offline.map(course => <Course key={course.id} {...course} />)
                         }
                     </div>
                 </div>

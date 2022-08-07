@@ -1,22 +1,24 @@
 import React, { useEffect, useState } from 'react'
 import Course from '../../components/Course'
 import { API } from '../../contants/api'
-import Skeleton from 'react-loading-skeleton'
+import SkeletonLoading from '../../components/SkeletonCourse'
 
 export default function CoursePage() {
 
     let [course, setCourse] = useState()
+    let isLoading = false
     useEffect(() => {
+        let $ = window.$
+        $("html, body").animate({ scrollTop: 0 }, 1000);
         fetch(`${API}/elearning/v4/courses`)
             .then(res => res.json())
             .then(res => {
                 setCourse(res.data)
             })
     }, [])
+
     if (!course) {
-        return (
-            <div style={{ display: 'flex', height: 500, flexDirection: 'column', alignItems: 'center', justifyContent: 'center' }}>...loading</div>
-        )
+        isLoading = true
     }
 
     return (
@@ -30,7 +32,7 @@ export default function CoursePage() {
                         </div>
                         <div className="list row">
                             {
-                                course.map(item => <Course key={item.id} {...item} />)
+                                isLoading ? [...Array(9)].map((e, i) => <SkeletonLoading key={i} />) : course.map(item => <Course key={item.id} {...item} isLoading={isLoading} />)
                             }
                         </div>
                     </div>
@@ -43,7 +45,7 @@ export default function CoursePage() {
                         </div>
                         <div className="list row">
                             {
-                                course.map(item => <Course key={item.id} {...item} />)
+                                isLoading ? [...Array(9)].map((e, i) => <SkeletonLoading key={i} />) : course.map(item => <Course key={item.id} {...item} isLoading={isLoading} />)
                             }
                         </div>
                         <div className="text-deco">C</div>

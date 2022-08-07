@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from 'react'
-import Loading from '../../components/Loading'
 import pageApi from '../../contants/pageApi'
 import Banner from './components/Banner'
 import CourseList from './components/CourseList'
@@ -10,7 +9,10 @@ import Special from './components/Special'
 export default function Home() {
     let [state, setState] = useState()
     let [course, setCourse] = useState()
+    let isLoading = false
     useEffect(() => {
+        let $ = window.$
+        $("html, body").animate({ scrollTop: 0 }, 1000);
         async function getDataHome() {
             let dataHome = await pageApi.home()
             setState(dataHome)
@@ -20,15 +22,17 @@ export default function Home() {
         }
         getDataHome()
     }, [])
-    if (!state || !course) {
-        return <Loading />
+    if (!course) {
+        isLoading = true
     }
     return (
         <main className="homepage" id="main">
             <Banner />
-            <CourseList offline={course} />
+            <CourseList offline={course} isLoading={isLoading} />
             <Special />
-            <Review review={state.review} />
+            {
+                state ? <Review review={state.review} /> : <div></div>
+            }
             <Gallery />
             <section className="section-action">
                 <div className="container">
