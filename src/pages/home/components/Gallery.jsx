@@ -30,19 +30,30 @@ export default function Gallery() {
                 <h2 className="main-title">Chúng ta là một team</h2>
             </div>
             <div className="list">
-                <img data-flickity-lazyload="img/img_team1.png" alt="" />
-                <img data-flickity-lazyload="img/img_team2.png" alt="" />
-                <img data-flickity-lazyload="img/img_team3.png" alt="" />
-                <img data-flickity-lazyload="img/img_team4.png" alt="" />
-                <img data-flickity-lazyload="img/img_team3.png" alt="" />
-                <img data-flickity-lazyload="img/img_team4.png" alt="" />
-                <img data-flickity-lazyload="img/img_team1.png" alt="" />
-                <img data-flickity-lazyload="img/img_team2.png" alt="" />
-                <img data-flickity-lazyload="img/img_team3.png" alt="" />
-                <img data-flickity-lazyload="img/img_team4.png" alt="" />
-                <img data-flickity-lazyload="img/img_team3.png" alt="" />
+                <img data-flickity-lazyload="/img/gallery/cfd-team.jpg" alt="" />
+                <img data-flickity-lazyload="/img/gallery/cfd-team-1.jpg" alt="" />
+                <img data-flickity-lazyload="/img/gallery/cfd-team-2.jpg" alt="" />
+                <img data-flickity-lazyload="/img/gallery/cfd-team-3.jpg" alt="" />
+                <img data-flickity-lazyload="/img/gallery/cfd-team-4.jpg" alt="" />
+                <img data-flickity-lazyload="/img/gallery/cfd-team-5.jpg" alt="" />
+                <img data-flickity-lazyload="/img/gallery/cfd-team-6.jpg" alt="" />
+                <img data-flickity-lazyload="/img/gallery/cfd-team-7.jpg" alt="" />
+                <img data-flickity-lazyload="/img/gallery/cfd-team-8.jpg" alt="" />
+                <img data-flickity-lazyload="/img/gallery/cfd-team-9.jpg" alt="" />
+                <img data-flickity-lazyload="/img/gallery/cfd-team-10.jpg" alt="" />
+                <img data-flickity-lazyload="/img/gallery/cfd-team-11.jpg" alt="" />
+                <img data-flickity-lazyload="/img/gallery/cfd-team-12.jpg" alt="" />
+                <img data-flickity-lazyload="/img/gallery/cfd-team-13.jpg" alt="" />
+                <img data-flickity-lazyload="/img/gallery/cfd-team-14.jpg" alt="" />
+                <img data-flickity-lazyload="/img/gallery/cfd-team-15.jpg" alt="" />
+                <img data-flickity-lazyload="/img/gallery/cfd-team-16.jpg" alt="" />
+                <img data-flickity-lazyload="/img/gallery/cfd-team-17.jpg" alt="" />
+                <img data-flickity-lazyload="/img/gallery/cfd-team-18.jpg" alt="" />
+                <img data-flickity-lazyload="/img/gallery/cfd-team-19.jpg" alt="" />
+                <img data-flickity-lazyload="/img/gallery/Image-from-iOS-(12).jpg" alt="" />
+                <img data-flickity-lazyload="/img/gallery/team-cfd-12.jpg" alt="" />
                 <div className="item carousel-cell">
-                    <img data-flickity-lazyload="img/img_team4.png" alt="" />
+                    <img data-flickity-lazyload="/img/gallery/team-cfd-12.jpg" alt="" />
                 </div>
             </div>
             <div className="controls">

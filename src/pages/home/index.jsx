@@ -14,9 +14,6 @@ export default function Home() {
         let $ = window.$
         $("html, body").animate({ scrollTop: 0 }, 1000);
         async function getDataHome() {
-            let dataHome = await pageApi.home()
-            setState(dataHome)
-
             let dataCourse = await pageApi.courses()
             setCourse(dataCourse.data)
         }
@@ -30,9 +27,7 @@ export default function Home() {
             <Banner />
             <CourseList offline={course} isLoading={isLoading} />
             <Special />
-            {
-                state ? <Review review={state.review} /> : <div></div>
-            }
+            <Review />
             <Gallery />
             <section className="section-action">
                 <div className="container">
