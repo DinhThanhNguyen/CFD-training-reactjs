@@ -8,6 +8,7 @@ import TeamMember from './components/TeamMember'
 
 export default function CourseDetail() {
     let [dataCourse, setDataCourse] = useState()
+    let param = useParams().slug
     useEffect(() => {
         let $ = window.$
         $("html, body").animate({ scrollTop: 0 }, 1000);
@@ -27,7 +28,6 @@ export default function CourseDetail() {
         }
     }, [dataCourse])
 
-    let param = useParams().slug
     useEffect(() => {
         const fetchData = async () => {
             let res = await pageApi.courses()

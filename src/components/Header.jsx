@@ -5,12 +5,10 @@ import { API } from '../contants/api'
 import { useAuth } from '../core/customHook/useAuth'
 
 let $ = window.$
-
 export default function Header() {
-
     let context = useContext(ContextModal)
     let auth = useAuth()
-    let [token, setToken] = useState(auth.user)
+    let token = auth.user
     let [dataUser, setdataUser] = useState()
 
     useEffect(() => {
@@ -55,7 +53,7 @@ export default function Header() {
                         })
                             .then(res2 => res2.json())
                             .then(res2 => {
-                                setToken(res2.data)
+                                token = res2.data
                             })
                     } else {
                         res.json()

@@ -7,7 +7,7 @@ import Sidebar from './components/Sidebar'
 
 export default function Profile() {
     let auth = useAuth()
-    let [token, setToken] = useState(auth.user)
+    let token = auth.user
     let [dataUser, setdataUser] = useState()
     useEffect(() => {
         if (token) {
@@ -29,9 +29,9 @@ export default function Profile() {
                                 refreshToken: token.refreshToken
                             })
                         })
-                            .then(res2 => res2.json())
-                            .then(res2 => {
-                                setToken(res2.data)
+                            .then(response => response.json())
+                            .then(response => {
+                                token = response.data
                             })
                     } else {
                         res.json()

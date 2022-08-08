@@ -12,15 +12,15 @@ export default function AuthProvider({ children }) {
     const [user, setUser] = useState(userTemp)
 
     const submitLogin = (data) => {
-        setUser(user)
         localStorage.setItem('user', JSON.stringify(data))
+        setUser(data)
         setLogin(true)
     }
 
-    const submitLogout = (data) => {
+    const submitLogout = () => {
         localStorage.removeItem('user')
+        setUser(null)
         setLogin(false)
-        setUser(undefined)
     }
 
     return (
