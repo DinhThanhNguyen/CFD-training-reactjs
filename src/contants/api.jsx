@@ -1,1 +1,1 @@
-export const API = 'http://cfd-reactjs.herokuapp.com'
+export const API = 'https://cfd-reactjs.herokuapp.com'

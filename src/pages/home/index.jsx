@@ -7,12 +7,12 @@ import Review from './components/Review'
 import Special from './components/Special'
 
 export default function Home() {
-    let [state, setState] = useState()
     let [course, setCourse] = useState()
     let isLoading = false
     useEffect(() => {
         let $ = window.$
         $("html, body").animate({ scrollTop: 0 }, 1000);
+        
         async function getDataHome() {
             let dataCourse = await pageApi.courses()
             setCourse(dataCourse.data)

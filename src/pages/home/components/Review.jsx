@@ -103,7 +103,7 @@ export default function Review() {
                                     sau khóa học thì mình có thể tự tin code được giao diện theo thiết kế và cả việc xử lí các sự kiện bằng javascript và jquery." />
                                     <ReviewImage source="/img/tesimonials/long-cfd-2.jpg" image="/img/tesimonials/long-cfd.jpg" name="Ngô Thành Long" content="Khoá học bổ ích, dễ hiểu, đặc biệt là rất thực chiến. Các mentor hài hước, 
                                     nhiều kinh nghiệm. Nói chung là ai không học thì uổng lắm =))))))))))" />
-                                    <ReviewImage source="/img/tesimonials/tuan-cfd-2.jpg" image="/img/tesimonials/tuan-cfd.jpg" name="Nguyễn Anh Tuấn" content="Là một nơi truyền cảm hứng cho mình thực hiện tiếp ước mơ và hoài bảo! 
+                                    <ReviewImage source="/img/tesimonials/van-tuan-cfd-2.jpg" image="/img/tesimonials/van-tuan-cfd.jpg" name="Nguyễn Anh Tuấn" content="Là một nơi truyền cảm hứng cho mình thực hiện tiếp ước mơ và hoài bảo! 
                                     Cảm ơn các thầy đã nổ lực hỗ trợ để mình có thể tiếp cận ước mơ của mình gần hơn." />
                                 </div>
                             </div>
